@@ -52,12 +52,12 @@ public class TaskController {
 	         JSONArray posts = (JSONArray)jsonObject.get("posts");
 	         //inserting POST
 	         int i=posts.size()-1;
-	         long postId=0;
+	         long postId=-1;
 	         if(i>=0)
 	         {JSONObject rec =(JSONObject)posts.get(i);
 	         postId=(long) rec.get("id");}
 	         else
-	        	 postId = 0;
+	        	 postId = -1;
 	        
 	         for (PostModel post : postList) 
 	         { 
@@ -76,12 +76,12 @@ public class TaskController {
 	         if(authorList!=null && authorList.size()>0) {
 	         JSONArray authors = (JSONArray)jsonObject.get("authors");
 	         int i=authors.size()-1;
-	         long authorId=0;
+	         long authorId=-1;
 	         if(i>=0)
 	         {JSONObject rec =(JSONObject)authors.get(i);
 	         authorId=(long) rec.get("id");}
 	         else
-	        	 authorId = 0;
+	        	 authorId = -1;
 	         
 	         for (AuthorModel author : authorList) 
 	         { 
