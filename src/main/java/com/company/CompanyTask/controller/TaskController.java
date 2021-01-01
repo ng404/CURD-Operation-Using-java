@@ -36,7 +36,7 @@ import javax.servlet.http.HttpServletRequest;
 @CrossOrigin(origins="*")
 public class TaskController {
 	
-	private static final String filePath = "C:\\Users\\User\\Desktop\\CompanyTask\\CompanyTask\\src\\main\\resources\\store.json";
+	private static final String filePath = "store.json";
 	
 	@PostMapping(value="/posts")
 	public JSONObject createPost(@RequestBody PostAuthorModel postAuthor) {
@@ -229,7 +229,7 @@ public class TaskController {
 		        	 }
 	        	 }
 	        	 if(_sort != null && _order !=null) {
-	        		 if(_order.equals("asc") && (_sort.equals("views") || _sort.equals("reviews") || _sort.equals("id")) ) {
+	        		 if(_order.equals("desc") && (_sort.equals("views") || _sort.equals("reviews") || _sort.equals("id")) ) {
 	        			 JSONArray jsArray = new JSONArray();
 	        			 List<JSONObject> jsonValues = new ArrayList<JSONObject>();
 	        			    for (int i = 0; i < posts.size(); i++) {
@@ -269,7 +269,7 @@ public class TaskController {
 	    	        	 }
 	        		 }
 	        		 else {
-	        			 if(_order.equals("desc") && (_sort.equals("views") || _sort.equals("reviews") || _sort.equals("id"))) {
+	        			 if(_order.equals("asc") && (_sort.equals("views") || _sort.equals("reviews") || _sort.equals("id"))) {
 	        				 JSONArray jsArray = new JSONArray();
 		        			 List<JSONObject> jsonValues = new ArrayList<JSONObject>();
 		        			    for (int i = 0; i < posts.size(); i++) {
